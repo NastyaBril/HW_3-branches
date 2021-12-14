@@ -1,0 +1,80 @@
+1. На локальном репозитории сделать ветки для:
+- Postman
+- Jmeter
+- CheckLists
+- Bag Reports
+- SQL
+- Charles
+- Mobile testing
+
+Создать внешний репозиторий:
+NEW - Repository Name (branch) - public - add a ReadMe file - create repository
+git clone (link)
+cd branch
+cd .git
+git branch Postman
+git branch Jmeter
+git branch CheckLists
+git branch Bag_Reports
+git branch SQL
+git branch Charles
+git branch Mobile_testing
+
+
+2. Запушить все ветки на внешний репозиторий:
+git push origin Postman Jmeter CheckLists Bag_Reports SQL Charles Mobile_testing
+
+3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта:
+cd branches
+git checkout bag_reports
+touch bag.txt
+vim bag.txt
+	Summary: New project
+	раздел Purchase licenses	
+	project: тестируем приложение TestRail
+	status: New
+	Step to Reproduce: 
+1. Проходим регистрацию по ссылке https://www.gurock.com/testrail/
+2. Проходим в раздел Purchase licenses
+3. Заполняем поля валидным значением
+	result: 1. консольная ошибка 404
+		  2. ошибка в таблице элемента
+Expected result: Невозможно прочитать значение свойства underfined в HTMLTableE1ement.
+		   сервер ответил с состоянием 404 не найдено.
+
+
+4. Запушить структуру багрепорта на внешний репозиторий:
+git add .
+git commit -m "bag.txt"
+git push -u origin bag_reports
+
+5. Вмержить ветку Bag Reports в Main:
+git checkout main
+git merge bag_reports
+
+6. Запушить main на внешний репозиторий:
+git push -u origin main
+
+7. В ветке CheckLists набросать структуру чек листа:
+git checkout CheckLists
+touch checklists.txt
+vim checklists.txt
+Раздел Заголовок:
+	Проверка работы кнопки Свернуть приложение.
+	Проверка работы кнопки Развернуть приложение.
+	Проверка работы кнопки Закрыть приложение.
+Раздел Содержимое окна:
+	Проверка ввода текста в поле ввода текста числа, буквы, спецсимволы.
+	Проверка работы вертикального скролла полосы прокрутки.
+
+8. Запушить структуру на внешний репозиторий:
+git add .
+git commit -m "checklists.txt"
+git push -u origin Checklists
+
+9. На внешнем репозитории сделать Pull Request ветки CheckLists в main:
+new pull request - create pull request
+
+10. Синхронизировать Внешнюю и Локальную ветки Main:
+git clone link  (https://github.com/NastyaBril/Branches.git)
+
